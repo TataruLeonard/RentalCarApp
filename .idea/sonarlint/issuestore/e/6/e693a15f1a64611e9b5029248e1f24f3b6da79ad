@@ -1,0 +1,28 @@
+
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ðþšä
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¹‘Ð†ûÿÿÿÿ
+S	java:S106""9Replace this use of System.out or System.err by a logger.(ØÌº¬þÿÿÿÿ
+S	java:S106#"9Replace this use of System.out or System.err by a logger.(ª²ô£ùÿÿÿÿ
+N	java:S106$"9Replace this use of System.out or System.err by a logger.(ù÷Ç÷
+<	java:S131'""Add a default case to this switch.(­Ö¹§úÿÿÿÿ
+S	java:S106;"9Replace this use of System.out or System.err by a logger.(õ±Ûèþÿÿÿÿ
+S	java:S106="9Replace this use of System.out or System.err by a logger.(µþÊáüÿÿÿÿ
+S	java:S106?"9Replace this use of System.out or System.err by a logger.(²ý…Çùÿÿÿÿ
+N	java:S106A"9Replace this use of System.out or System.err by a logger.(ÏŠ©À
+N	java:S106C"9Replace this use of System.out or System.err by a logger.(À¤ÿ£
+N	java:S106E"9Replace this use of System.out or System.err by a logger.(ç£Ã¥
+N
+java:S1117G"8Rename "user" which hides the field declared at line 15.(Ç­‚û
+S	java:S106S"9Replace this use of System.out or System.err by a logger.(©þêÜúÿÿÿÿ
+N	java:S106X"9Replace this use of System.out or System.err by a logger.(À¤ÿ£
+N	java:S106Z"9Replace this use of System.out or System.err by a logger.(ç£Ã¥
+S	java:S106`"9Replace this use of System.out or System.err by a logger.(©þêÜúÿÿÿÿ
+F
+java:S1128
+"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+f
+java:S1301'"KReplace this "switch" statement by "if" statements to increase readability.(­Ö¹§úÿÿÿÿ
+@
+java:S5411,"*Use the primitive boolean expression here.(’¬ŽÜ

@@ -31,6 +31,7 @@ public class AppCustomer {
     public void start() {
         int option;
         do {
+            System.out.println("---Meniu---");
             System.out.println("1. Show all cars");
             System.out.println("2. Filter by:");
             System.out.println("3. Sort by price:");
@@ -79,14 +80,14 @@ public class AppCustomer {
                 Date end = new SimpleDateFormat("dd/MM/yyyy").parse(endDate);
                 booking.setStart(start);
                 booking.setEnd(end);
-                bookingService.addBookingToCar(car,booking);
-                int calculateEnd = Integer.parseInt(endDate.substring(0,2));
-                int calculateStart = Integer.parseInt(startDate.substring(0,2));
+                bookingService.addBookingToCar(car, booking);
+                int calculateEnd = Integer.parseInt(endDate.substring(0, 2));
+                int calculateStart = Integer.parseInt(startDate.substring(0, 2));
                 int daysRent = calculateEnd - calculateStart;
                 //todo nu imi face scaderea de 10% pentru clientii care au discount = true
                 totalPay = car.getPrice() * daysRent;
-                if(user.getDiscount()){
-                    double discount = 10/100 * totalPay;
+                if (user.getDiscount()) {
+                    double discount = 10 / 100 * totalPay;
                     totalPay = totalPay - discount;
                     userService.deleteDiscount(user);
                 }
@@ -108,9 +109,9 @@ public class AppCustomer {
                 Date end = new SimpleDateFormat("dd/MM/yyyy").parse(endDate);
                 booking.setStart(start);
                 booking.setEnd(end);
-                bookingService.addBookingToCar(car,booking);
-                int calculateEnd = Integer.parseInt(endDate.substring(0,2));
-                int calculateStart = Integer.parseInt(startDate.substring(0,2));
+                bookingService.addBookingToCar(car, booking);
+                int calculateEnd = Integer.parseInt(endDate.substring(0, 2));
+                int calculateStart = Integer.parseInt(startDate.substring(0, 2));
                 int daysRent = calculateEnd - calculateStart;
                 totalPay = car.getPrice() * daysRent;
                 System.out.println("You have to pay: " + totalPay + " for " + daysRent + " days.");
@@ -120,17 +121,29 @@ public class AppCustomer {
         }
         System.out.println("You want to rent another car: (y/n)");
         String rentAnotherCar = scannerLine.nextLine();
-        if(rentAnotherCar.equalsIgnoreCase("n")){
-          Double pay = 0.0;
-          while(pay == totalPay){
-              System.out.println("You have to pay: " + totalPay);
-              System.out.println("Enter the payment:");
-              pay = scannerInt.nextDouble();
-              if(pay < totalPay){
-                  System.out.println("You have to enter the rest of the payment:");
-                  pay += scannerInt.nextDouble();
-              }
-          }
+        Double pay = 0.0;
+        if (rentAnotherCar.equalsIgnoreCase("n")) {
+//          Double pay = 0.0;
+//          while(pay == totalPay){
+//              System.out.println("You have to pay: " + totalPay);
+//              System.out.println("Enter the payment:");
+//              pay = scannerInt.nextDouble();
+//              if(pay < totalPay){
+//                  System.out.println("You have to enter the rest of the payment:");
+//                  pay += scannerInt.nextDouble();
+//              }
+//          }
+//            System.out.println("Thx for rent cars from us.");
+
+            do {
+                System.out.println("You have to pay: " + totalPay + " u payed: " + pay);
+                System.out.println("Enter the payment:");
+                pay = scannerInt.nextDouble();
+                if (pay < totalPay) {
+                    System.out.println("You have to enter the rest of the payment:" + (totalPay - pay));
+                    pay += scannerInt.nextDouble();
+                }
+            } while (pay <= totalPay);
             System.out.println("Thx for rent cars from us.");
         }
 
@@ -182,7 +195,7 @@ public class AppCustomer {
     private void filtruType() {
         System.out.println("This are all types of cars we have:");
         carService.typeOfCars();
-        System.out.println("Choose a type:");
+        System.out.println("Choose a type (wrote the type of car u want)");
         String type = scannerLine.nextLine();
         try {
             carService.filterByType(type);

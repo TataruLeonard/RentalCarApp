@@ -25,7 +25,7 @@ public class HibernateConfig {
         configuration.addAnnotatedClass(Car.class);
         configuration.addAnnotatedClass(Booking.class);
 
-        properties.put(Environment.SHOW_SQL, true);
+        properties.put(Environment.SHOW_SQL, false);
 
         configuration.setProperties(properties);
 
