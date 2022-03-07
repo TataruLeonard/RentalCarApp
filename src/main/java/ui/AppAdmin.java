@@ -105,7 +105,7 @@ public class AppAdmin {
     private void filtruType() {
         System.out.println("This are all types of cars we have:");
         carService.typeOfCars();
-        System.out.println("Choose a type:");
+        System.out.println("Choose a type (write the type u have choosed)");
         String type = scannerLine.nextLine();
         try {
             carService.filterByType(type);
